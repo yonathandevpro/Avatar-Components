@@ -15,6 +15,7 @@ export default function App () {
         const [ { picture, name } ] = data.results;
         const { title, first, last } = name;
 
+        const initials = `${first.charAt(0)} ${last.charAt(0)}`;
         
         setProfilePic({
             name: `${title} ${first} ${last}`,
@@ -30,7 +31,7 @@ export default function App () {
         <>
             <h1>Avatar Samples</h1>
             <div className="container">
-                <Avatar>YB</Avatar>
+                <Avatar>{initials}</Avatar>
                 <Avatar src={profilePic.url} alt={profilePic.name}/>
                 <Avatar />
              </div>  
